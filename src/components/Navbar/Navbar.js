@@ -67,7 +67,7 @@ import MoreIcon from "@mui/icons-material/MoreVert";
 import { useContext } from "react";
 import UserLogin from "../../utils/dataApi";
 import LoginModal from "../LoginModal";
-
+import { Link } from "react-router-dom";
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: theme.shape.borderRadius,
@@ -108,9 +108,9 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function PrimarySearchAppBar() {
-  const login = useContext(UserLogin);
-  console.log(login);
+export default function PrimarySearchAppBar(props) {
+  console.log(props);
+
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -207,13 +207,16 @@ export default function PrimarySearchAppBar() {
 
         <p>Profile</p>
       </MenuItem>
-      ) :<span>login</span>
+      )
     </Menu>
   );
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ backgroundColor: "black" }}>
+      <AppBar
+        position="static"
+        sx={{ backgroundColor: "black", width: "100%" }}
+      >
         <Toolbar>
           <IconButton
             size="large"
@@ -242,7 +245,7 @@ export default function PrimarySearchAppBar() {
             />
           </Search>
           <Box sx={{ flexGrow: 1 }} />
-          {login.password ? (
+          {props.app.userIsLogedIn() ? (
             <>
               <Box sx={{ display: { xs: "none", md: "flex" } }}>
                 <IconButton
@@ -289,7 +292,9 @@ export default function PrimarySearchAppBar() {
               </Box>{" "}
             </>
           ) : (
-            <LoginModal />
+            <>
+              <Link to="/login">login</Link> / <Link to="/signup">Singup</Link>
+            </>
           )}
         </Toolbar>
       </AppBar>

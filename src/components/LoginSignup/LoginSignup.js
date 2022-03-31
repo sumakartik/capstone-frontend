@@ -1,7 +1,7 @@
 import { useState } from "react";
-import "./styles.scss";
+import "./styles.css";
 import { useContext } from "react";
-import UserContextInfo from "../../context.js";
+import UserContextInfo from "../../utils/dataApi";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 function LoginSignup(props) {

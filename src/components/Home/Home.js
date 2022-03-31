@@ -21,7 +21,7 @@ const initialState = () => {
   }
 };
 
-export default function Home() {
+export default function Home(props) {
   const [data, setData] = useState(initialState);
 
   const addMoreCard = (title, listId) => {
@@ -194,7 +194,7 @@ export default function Home() {
   };
   return (
     <>
-      <Navbar />
+      <Navbar app={props.app} />
       <dataApi.Provider
         value={{
           addMoreCard,

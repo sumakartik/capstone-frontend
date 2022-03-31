@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
 import { Routes, Route } from "react-router-dom";
+import LoginSignup from "./components/LoginSignup/LoginSignup";
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -11,7 +12,9 @@ class App extends React.Component {
       isLogedIn: false,
     };
   }
-  // userIsLogedIn() {}
+  userIsLogedIn() {
+    return false;
+  }
   // componentDidMount() {
   //   if (this.state.user.username && this.state.user.password) {
   //     fetch("http://localhost:", {
@@ -32,7 +35,8 @@ class App extends React.Component {
   render() {
     return (
       <Routes>
-        <Route path="/home" element={<Home app={this} />} />
+        <Route path="/login" element={<LoginSignup app={this} />} />
+        <Route path="/home" element={<Home app={this} isSignUp={true} />} />
       </Routes>
     );
   }
