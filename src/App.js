@@ -91,7 +91,7 @@ class App extends React.Component {
       .then((res) => res.json())
       .then((user) => {
         if (user.username){
-          this.getProduct();
+          this.handleGetProject();
           this.setState({ user: user,isLogedIn:true });
         }else{
           event.target.loginStatus.value=user.msg;
