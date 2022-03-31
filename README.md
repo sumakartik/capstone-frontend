@@ -8,15 +8,15 @@ This is a Product Management App created for Galavanize's Full-Stack SDI08 cohor
 
 ## Technologies Used
 
-    [Create React App](https://github.com/facebook/create-react-app)
-    [Express](https://expressjs.com/)
-    [Postgresql](https://www.postgresql.org/)
-    [Docker](https://www.docker.com/)
-    [Material-UI](https://mui.com/)
+[Create React App](https://github.com/facebook/create-react-app)
+[Express](https://expressjs.com/)
+[Postgresql](https://www.postgresql.org/)
+[Docker](https://www.docker.com/)
+[Material-UI](https://mui.com/)
 
 ## Code Base
 
-Front-end repository is available at: https://github.com/sumakartik/capstone-frontend
+Front-end repository is available at: https://github.com/sumakartik/capstone-frontend  
 Back-end repository is available at: https://github.com/frimpongsarfok/capstone-backend
 
 ## Available Scripts
@@ -33,13 +33,13 @@ Launch the app locally at localhost:3000.
 
 ### Routes
 
-/home   - Puts you at a product page, where you can manipulate and look into a product.
-/login  - Puts you at the login page, where you can access an account.
-/signup - Puts you at the signup page, where you can make an account.
+/home   - Puts you at a product page, where you can manipulate and look into a product.  
+/login  - Puts you at the login page, where you can access an account.  
+/signup - Puts you at the signup page, where you can make an account.  
 
 ### Deployment
 
-This app is currently deployed at
-    [Frontend](https://capstone-frontend-sdi08.herokuapp.com/home)
-    [Backend](https://capstone-sdio8-codetalkers.herokuapp.com/)
+This app is currently deployed at:  
+[Frontend](https://capstone-frontend-sdi08.herokuapp.com/home)  
+[Backend](https://capstone-sdio8-codetalkers.herokuapp.com/)
 
