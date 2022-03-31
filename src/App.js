@@ -11,7 +11,7 @@ class App extends React.Component {
     this.state = {
       user: props.user,
       isLogedIn: false,
-      serverAddress:'http://localhost:6001',
+      serverAddress:'https://capstone-sdio8-codetalkers.herokuapp.com',
       projects:undefined,
       products:undefined,
       lists:undefined,
