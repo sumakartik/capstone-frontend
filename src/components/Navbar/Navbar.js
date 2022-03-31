@@ -66,6 +66,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import { useContext } from "react";
 import UserLogin from "../../utils/dataApi";
+import Button from '@mui/material/Button';
 
 import { Link } from "react-router-dom";
 const Search = styled("div")(({ theme }) => ({
@@ -205,7 +206,7 @@ export default function PrimarySearchAppBar(props) {
           <AccountCircle />
         </IconButton>
 
-        <p>Profile</p>
+        <Button onClick={()=>props.app.handleLogout()}  >Logout</Button>
       </MenuItem>
       
     </Menu>
@@ -277,17 +278,7 @@ export default function PrimarySearchAppBar(props) {
                 >
                   <AccountCircle />
                 </IconButton>
-                <IconButton
-                  size="large"
-                  edge="end"
-                  aria-label="account of current user"
-                  aria-controls={menuId}
-                  aria-haspopup="true"
-                  onClick={handleProfileMenuOpen}
-                  color="inherit"
-                >
-                  <AccountCircle />
-                </IconButton>
+               
               </Box>
               <Box sx={{ display: { xs: "flex", md: "none" } }}>
                 <IconButton

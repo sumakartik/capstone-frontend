@@ -8,14 +8,19 @@ import {Link} from 'react-router-dom'
 import {useEffect} from 'react'
 function LoginSignup(props) {
   const isSignUp = props.isSignUp;
+ 
 
   const navigate=useNavigate();
     useEffect(()=>{
-        if(!props.app.userIsLogedIn()){
+   
+      console.log('hiissosososos',props.app.state.isLogedIn);
+        if(props.app.state.isLogedIn){
+
+        
             navigate('/');
-            return <></>;
+        
         }
-    },[])
+    })
   return (
     <section>
       <div>

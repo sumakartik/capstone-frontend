@@ -197,10 +197,10 @@ export default function Home(props) {
   const navigate=useNavigate();
     useEffect(()=>{
         if(!props.app.userIsLogedIn()){
-            navigate('/');
+            navigate('/login');
             return <></>;
         }
-    },[])
+    })
   return (
     <>
       <Navbar app={props.app} />

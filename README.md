@@ -1,6 +1,6 @@
 # Code Talkers - SDI08 Capstone
 
-<img src="%PUBLIC_URL%/ourlogo.png">
+<img src="public/ourlogo.png">
 
 ## Created By: Rocco Patrick, Brandon Adams, Sarfo K Frimpong, Suma Kartik
 

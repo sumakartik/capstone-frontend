@@ -4,6 +4,7 @@ import Home from "./components/Home/Home";
 import { Routes, Route } from "react-router-dom";
 import LoginSignup from "./components/LoginSignup/LoginSignup";
 
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -18,28 +19,11 @@ class App extends React.Component {
      
     };
   }
+
+
   userIsLogedIn() {
     return this.state.isLogedIn;
   }
-  // componentDidMount() {
-  //   if (this.state.user.username && this.state.user.password) {
-  //     fetch("http://localhost:", {
-  //       method: "GET",
-  //       credentials: "include",
-  //       referrerPolicy: "origin-when-cross-origin",
-  //       headers: {
-  //         "Content-Type": "application/x-www-form-urlencoded",
-  //         Accept: "application/json",
-  //       },
-  //     })
-  //       .then((resp) => resp.json())
-  //       .then((user) => {
-  //         if (user.username.length) this.setState({ user: user });
-  //       });
-  //   }
-  // }
-
-
   componentDidMount(){
     if(this.state.user.username&& this.state.user.password){
 
@@ -83,6 +67,37 @@ class App extends React.Component {
       }).catch((err) => console.log(err));
   }
 
+  handleLogout(){
+    fetch(
+      `${this.state.serverAddress}/logout`,
+      {
+        method: "GET",
+        credentials: "include",
+        referrerPolicy: "origin-when-cross-origin",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+          Accept: "application/json",
+    
+        },
+      }
+    )
+    .then((res) => res.json())
+      .then((msg) => {
+
+
+        this.setState({
+          user:{},
+          isLogedIn:false,
+          projects:{},
+          products:{},
+          lists:{},
+          cards:{}})
+        console.log(msg)
+      
+      }).catch((err) => console.log(err));
+    
+  }
+
   login(username,password,eventTag){
     fetch(
       `${this.state.serverAddress}/login?username=${username}&password=${password}`,
@@ -99,15 +114,16 @@ class App extends React.Component {
       .then((res) => res.json())
       .then((user) => {
         if (user.username){
-          this.handleGetProject();
+         
           this.setState({ user: user,isLogedIn:true });
+          this.handleGetProject();
         }else{
           if(eventTag)
           eventTag.value=user.msg;
           this.setState({ user:{}});
         }
       
-        console.log(user)
+        console.log(this.state)
       })
       .catch((err) => console.log(err));
   }
