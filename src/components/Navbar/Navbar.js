@@ -66,7 +66,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import { useContext } from "react";
 import UserLogin from "../../utils/dataApi";
-import LoginModal from "../LoginModal";
+
 import { Link } from "react-router-dom";
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -293,7 +293,7 @@ export default function PrimarySearchAppBar(props) {
             </>
           ) : (
             <>
-              <Link to="/login">login</Link> / <Link to="/signup">Singup</Link>
+              <Link to="/login">Login</Link> / <Link to="/signup">Sign Up</Link>
             </>
           )}
         </Toolbar>

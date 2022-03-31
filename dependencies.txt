@@ -15,6 +15,7 @@ react-router-dom@6
 react-beautiful-dnd
 react-textarea-autosize
 react-onclickoutside
+js-cookie
 react-textarea-autosize
 
 
