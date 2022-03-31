@@ -4,6 +4,24 @@ mui:
     emoticon/styled
     emotion/react
     icons-material
+    data-grid-pro
+    @material-ui/core
+    @material-ui/icons
+    @material-ui/icons
+    
 
 
 react-router-dom@6
+react-beautiful-dnd
+react-textarea-autosize
+react-onclickoutside
+react-textarea-autosize
+
+
+
+git add .
+git commit -m "..."
+git push
+
+
+git checkout -b "WIP2"
