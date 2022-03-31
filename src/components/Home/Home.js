@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect} from "react";
 import { v4 as uuid } from "uuid";
 import { DragDropContext, Droppable } from "react-beautiful-dnd";
 
+import {useNavigate} from 'react-router'
 import InputContainer from "../InputContainer/InputContainer";
 import List from "../List/List";
 
@@ -22,6 +23,7 @@ const initialState = () => {
 };
 
 export default function Home(props) {
+
   const [data, setData] = useState(initialState);
 
   const addMoreCard = (title, listId) => {
@@ -192,6 +194,13 @@ export default function Home(props) {
       window.localStorage.setItem("dataKanban", JSON.stringify(newState));
     }
   };
+  const navigate=useNavigate();
+    useEffect(()=>{
+        if(!props.app.userIsLogedIn()){
+            navigate('/');
+            return <></>;
+        }
+    },[])
   return (
     <>
       <Navbar app={props.app} />
