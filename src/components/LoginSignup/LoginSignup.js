@@ -5,11 +5,17 @@ import UserContextInfo from "../../utils/dataApi";
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
 import {Link} from 'react-router-dom'
+import {useEffect} from 'react'
 function LoginSignup(props) {
   const isSignUp = props.isSignUp;
- 
-  const navigate = useNavigate();
 
+  const navigate=useNavigate();
+    useEffect(()=>{
+        if(!props.app.userIsLogedIn()){
+            navigate('/');
+            return <></>;
+        }
+    },[])
   return (
     <section>
       <div>
@@ -24,22 +30,24 @@ function LoginSignup(props) {
             {isSignUp ? (
               <>
                 <label htmlFor="fname">
-                  First Name :
+
                   <input
                     type="text"
                     name="fname"
                     className="login-box"
+                    placeholder="First Name"
                     required
                   />
                 </label>
                 <br></br>
                 <label htmlFor="lname">
                   {" "}
-                  Last Name :
+                  
                   <input
                     type="text"
                     name="lname"
                     className="login-box"
+                    placeholder="Last Name"
                     required
                   />
                 </label>
@@ -50,21 +58,23 @@ function LoginSignup(props) {
             <br></br>
             <label htmlFor="username">
               {" "}
-              User Name :
+              
               <input
                 type="text"
                 name="username"
                 className="login-box"
+                placeholder="Username"
                 required
               />
             </label>
             <br></br>
             <label htmlFor="password">
-              Password
+              
               <input
                 type="password"
                 name="password"
                 className="login-box"
+                placeholder="Password"
                 required
               />
             </label>
@@ -79,9 +89,9 @@ function LoginSignup(props) {
            
 
             {isSignUp ? (
-              <><input type="submit" value="SIGNUP" className="-btn" /><Link to='/login'>LogIn</Link></>
+              <><input type="submit" value="SIGNUP" className="-btn" /><Link to='/login'>Login</Link></>
             ) : (
-              <><input type="submit" value="LOGIN" className="login-btn" /><Link to='/signup'>SinUp</Link></>
+              <><input type="submit" value="LOGIN" className="login-btn" /><Link to='/signup'>Sign Up</Link></>
             )}
           </form>
         </div>

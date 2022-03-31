@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
 import { Routes, Route } from "react-router-dom";
 import LoginSignup from "./components/LoginSignup/LoginSignup";
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -13,11 +14,12 @@ class App extends React.Component {
       projects:undefined,
       products:undefined,
       lists:undefined,
-      cards:undefined
+      cards:undefined,
+     
     };
   }
   userIsLogedIn() {
-    return false;
+    return this.state.isLogedIn;
   }
   // componentDidMount() {
   //   if (this.state.user.username && this.state.user.password) {
@@ -36,6 +38,15 @@ class App extends React.Component {
   //       });
   //   }
   // }
+
+
+  componentDidMount(){
+    if(this.state.user.username&& this.state.user.password){
+
+      console.log('cookie login',this.state.user.username,this.state.user.password)
+        this.login(this.state.user.username,this.state.user.password)
+    }
+  }
   handleSignUp(event){
     event.preventDefault();
     const username = event.target.username.value;
@@ -71,11 +82,8 @@ class App extends React.Component {
       
       }).catch((err) => console.log(err));
   }
-  handleLogIn(event) {
-    event.preventDefault();
-    const username = event.target.username.value;
-    const password = event.target.password.value;
-    
+
+  login(username,password,eventTag){
     fetch(
       `${this.state.serverAddress}/login?username=${username}&password=${password}`,
       {
@@ -94,13 +102,21 @@ class App extends React.Component {
           this.handleGetProject();
           this.setState({ user: user,isLogedIn:true });
         }else{
-          event.target.loginStatus.value=user.msg;
+          if(eventTag)
+          eventTag.value=user.msg;
           this.setState({ user:{}});
         }
       
         console.log(user)
       })
       .catch((err) => console.log(err));
+  }
+  handleLogIn(event) {
+    event.preventDefault();
+    const username = event.target.username.value;
+    const password = event.target.password.value;
+    
+    this.login(username,password, event.target.loginStatus)
   }
 
   handleGetProject(){
@@ -129,6 +145,7 @@ class App extends React.Component {
   render() {
     return (
       <Routes>
+         <Route path="/" element={<Home app={this} />} />
         <Route path="/login" element={<LoginSignup app={this} />} />
         <Route
           path="/signup"
@@ -139,6 +156,9 @@ class App extends React.Component {
     );
   }
 }
+
+
+
 
 export default App;
 

@@ -1,10 +1,14 @@
 # Code Talkers - SDI08 Capstone
 
+<img src="%PUBLIC_URL%/ourlogo.png">
+
 ## Created By: Rocco Patrick, Brandon Adams, Sarfo K Frimpong, Suma Kartik
 
-This is a Product Management App created for Galavanize's Full-Stack SDI08 cohort. 
+This is a Product Management App created for Galavanize's Full-Stack SDI08 cohort.  
 
 ## Problem Statement
+
+We need an app that allows a product owner(or unit) to track all of the projects and products that they are in charge of in order to make sure that they are keeping on track with stakeholder goals and schedules as well as not assigning too much to their team. This app also needs to help them understand the efficiency of their teams in order to help streamline future endeavors.
 
 ## Technologies Used
 

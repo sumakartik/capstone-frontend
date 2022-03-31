@@ -4,10 +4,15 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
+import UserContextInfo from './utils/dataApi.js'
+import Cookies from 'js-cookie'
+
+const username=Cookies.get('username');
+const password=Cookies.get('password');
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <App />
+      <App user={{username:username,password:password}}/>
     </Router>
   </React.StrictMode>,
   document.getElementById("root")
