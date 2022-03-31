@@ -12,11 +12,11 @@ We need an app that allows a product owner(or unit) to track all of the projects
 
 ## Technologies Used
 
-[Create React App](https://github.com/facebook/create-react-app)
-[Express](https://expressjs.com/)
-[Postgresql](https://www.postgresql.org/)
-[Docker](https://www.docker.com/)
-[Material-UI](https://mui.com/)
+[Create React App](https://github.com/facebook/create-react-app)    
+[Express](https://expressjs.com/). 
+[Postgresql](https://www.postgresql.org/). 
+[Docker](https://www.docker.com/). 
+[Material-UI](https://mui.com/). 
 
 ## Code Base
 
