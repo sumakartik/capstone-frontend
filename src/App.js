@@ -21,11 +21,12 @@ class App extends React.Component {
   }
 
 
-  userIsLogedIn() {
-    return this.state.isLogedIn;
+ userIsLogedIn() {
+    console.log('cookie login',this.state.user.username,this.state.user.password)
+    return this.state.user.username&&this.state.user.password;
   }
   componentDidMount(){
-    if(this.state.user.username&& this.state.user.password){
+    if(!this.userIsLogedIn()){
 
       console.log('cookie login',this.state.user.username,this.state.user.password)
         this.login(this.state.user.username,this.state.user.password)
