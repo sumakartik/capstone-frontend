@@ -13,7 +13,7 @@ function LoginSignup(props) {
   const navigate=useNavigate();
     useEffect(()=>{
    
-      console.log('hiissosososos',props.app.state.isLogedIn);
+    
         if(props.app.state.isLogedIn){
 
         
@@ -23,13 +23,15 @@ function LoginSignup(props) {
     })
   return (
     <section>
+    
       <div>
         <div className="form-box solid">
           <form onSubmit={(e) => isSignUp?props.app.handleSignUp(e):props.app.handleLogIn(e)}>
+            <p><h1>Code-Talkers</h1></p>
             {isSignUp ? (
               <h1 className="login-text">Sign Up</h1>
             ) : (
-              <h1 className="login-text">Login</h1>
+              <h3 className="login-text">Login</h3>
             )}
 
             {isSignUp ? (
@@ -87,16 +89,16 @@ function LoginSignup(props) {
             <input
                 type="text"
                 name='loginStatus'
-                className="login-box"
+                className="login-status"
                readOnly
               />
                <br></br>
            
 
             {isSignUp ? (
-              <><input type="submit" value="SIGNUP" className="-btn" /><Link to='/login'>Login</Link></>
+              <><input type="submit" value="SIGNUP" className="-btn" /><br></br><Link to='/login'>Already have an account? Log in</Link></>
             ) : (
-              <><input type="submit" value="LOGIN" className="login-btn" /><Link to='/signup'>Sign Up</Link></>
+              <><input type="submit" value="LOGIN" className="login-btn" /><br></br><Link to='/signup'>Don't have an account? Sign up</Link></>
             )}
           </form>
         </div>
