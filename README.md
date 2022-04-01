@@ -8,7 +8,7 @@ This is a Product Management App created for Galavanize's Full-Stack SDI08 cohor
 
 ## Problem Statement
 
-We need an app that allows a product owner(or unit) to track all of the projects and products that they are in charge of in order to make sure that they are keeping on track with stakeholder goals and schedules as well as not assigning too much to their team. This app also needs to help them understand the efficiency of their teams in order to help streamline future endeavors.
+Every branch of the military seems  to have one common problem: data management. There is an excessive amount of data that needs to be tracked and be accounted for on a daily basis at various levels.. The usual answer to this  has been a profligacy of excel documents and a lack of dissemination from those handling it to those that end up dealing with it. Our mission here has been to make an application that makes it simple to manage, share, and work through any manner of data or problems for service members. This app could be used to take accountability of soldiers, dragging them from on leave, to tasked out, or to whatever other status you’d like along with a description of your choice. Or you could use it to manage a project you’re working on, assigning jobs to team members and seeing how much you’re working on in comparison to how much you need to get done. The problem is data management, and this application tackles it.
 
 ## Technologies Used
 
