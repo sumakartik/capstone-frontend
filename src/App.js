@@ -3,6 +3,7 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
 import { Routes, Route } from "react-router-dom";
 import LoginSignup from "./components/LoginSignup/LoginSignup";
+import OurCalendar from "./Calendar";
 
 
 class App extends React.Component {
@@ -169,6 +170,7 @@ class App extends React.Component {
           element={<LoginSignup app={this} isSignUp={true} />}
         />
         <Route path="/home" element={<Home app={this} />} />
+        <Route path="/calendar" element={<OurCalendar app={this} />} />
       </Routes>
     );
   }
