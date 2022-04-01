@@ -40,10 +40,3 @@ Launch the app locally at localhost:3000.
 /home   - Puts you at a product page, where you can manipulate and look into a product.  
 /login  - Puts you at the login page, where you can access an account.  
 /signup - Puts you at the signup page, where you can make an account.  
-
-### Deployment
-
-This app is currently deployed at:  
-[Frontend](https://capstone-frontend-sdi08.herokuapp.com/home)  
-[Backend](https://capstone-sdio8-codetalkers.herokuapp.com/)
-
